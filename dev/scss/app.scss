@@ -17,6 +17,10 @@ header, footer {
   display: flex;
   justify-content: space-between;
   padding: 44px 0;
+
+  & a {
+    text-decoration: none;
+  }
 }
 
 .logo-link {
