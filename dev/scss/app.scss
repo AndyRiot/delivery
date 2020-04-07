@@ -1,0 +1,48 @@
+@import "mixins";
+
+body {
+  font-family: Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+}
+
+header, footer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 44px 0;
+}
+
+.logo-link {
+  display: flex;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 18px;
+  text-decoration: none;
+  width: 100px;
+
+  & > img {
+    margin-right: 10px;
+  }
+}
+
+.slider {
+  & > .promo {
+    @include b-sh(0px 7px 12px rgba(158, 158, 163, 0.1));
+    height: 300px;
+    width: 100%;
+
+    & > img {
+      height: 100%;
+      @include o-f(cover);
+      width: 100%;
+    }
+  }
+}

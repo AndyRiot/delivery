@@ -7,13 +7,13 @@ const path = require('path'),
 
 module.exports = {
     mode: "production",
-    entry: './dev/js/scripts.js',
+    entry: './dev/js/app.js',
     output: {
-        filename: '../js/main.js',
+        filename: '../js/app.js',
         path: path.resolve(__dirname, "assets/css")
     },
     plugins: [
-        new ExtractTextPlugin('style.css'),
+        new ExtractTextPlugin('app.css'),
         new JavaScriptObfuscator({rotateUnicodeArray: true})
     ],
     module: {

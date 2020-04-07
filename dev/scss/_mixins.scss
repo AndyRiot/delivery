@@ -1,0 +1,55 @@
+@function implode($pieces, $glue: "") {
+  $result: null;
+  @for $i from 1 through length($pieces) {
+    $piece: nth($pieces, $i);
+    @if type-of($piece) == list {
+      $result: unquote("#{$result}#{$glue}#{implode($piece, ' ')}");
+    } @else {
+      $result: unquote("#{$result}#{$glue}#{$piece}");
+    }
+  }
+  @if $result != null {
+    $result: str-slice($result, str-length($glue) + 1, -1);
+  }
+  @return $result;
+}
+
+@mixin transform($trans) {
+  transform: $trans;
+  -moz-transform: $trans;
+  -ms-transform: $trans;
+  -o-transform: $trans;
+  -webkit-transform: $trans;
+}
+
+@mixin b-r($val) {
+  border-radius: $val;
+  -moz-border-radius: $val;
+  -webkit-border-radius: $val;
+}
+
+@mixin animate($animate) {
+  animation: $animate;
+  -moz-animation: $animate;
+  -webkit-animation: $animate;
+  -o-animation: $animate;
+}
+
+@mixin transit($trans) {
+  transition: $trans;
+  -o-transition: $trans;
+  -moz-transition: $trans;
+  -webkit-transition: $trans;
+}
+
+@mixin o-f($type) {
+  object-fit: $type;
+  -o-object-fit: $type;
+}
+
+@mixin b-sh($shadow...) {
+  box-shadow: implode($shadow, ',');
+  -moz-box-shadow: implode($shadow, ',');
+  -o-box-shadow: implode($shadow, ',');
+  -webkit-box-shadow: implode($shadow, ',');
+}
