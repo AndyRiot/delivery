@@ -1,0 +1,12 @@
+{
+    "name": "ar/delivery",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "AndyRiot",
+            "email": "endy.q91@gmail.com"
+        }
+    ],
+    "require": {}
+}
