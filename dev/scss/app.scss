@@ -3,6 +3,7 @@
 @import "fonts";
 
 $primary: #1890FF;
+$width-step: 8.33333%;
 
 * {
   outline: none !important;
@@ -25,10 +26,43 @@ header, footer {
   }
 }
 
+main {
+  @include bg-lg(180deg, rgba(245, 245, 245, 0) 1.04%, #F5F5F5 100%);
+}
+
+h1 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+}
+
 .container {
   margin: 0 auto;
   max-width: 1200px;
   width: 100%;
+}
+
+.content {
+  padding-bottom: 60px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -12px;
+}
+
+.col {
+  box-sizing: border-box;
+  padding: 0 12px;
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    @extend .col;
+    flex: 0 0 $i * $width-step;
+  }
 }
 
 .btn {
@@ -117,7 +151,7 @@ header, footer {
     line-height: 24px;
     padding: 8px 12px 8px 32px;
 
-    &::placeholder {
+    @include placeholder {
       color: #BFBFBF;
       font-family: 'San Francisco Pro Display Regular', sans-serif;
       font-size: 16px;
@@ -130,7 +164,10 @@ header, footer {
 }
 
 .slider {
+  margin-bottom: 56px;
+
   & > .promo {
+    @include b-r(10px);
     @include b-sh(0px 7px 12px rgba(158, 158, 163, 0.1));
     height: 300px;
     width: 100%;
@@ -140,5 +177,90 @@ header, footer {
       @include o-f(cover);
       width: 100%;
     }
+  }
+}
+
+.socials {
+  a {
+    @include transit(.2s ease-in-out);
+
+    &:hover {
+      opacity: .5;
+    }
+  }
+}
+
+.rotate {
+  @include transform(rotate(180deg));
+}
+
+.products-card {
+  background-color: #fff;
+  @include b-r(7px);
+  @include b-sh(0px 4px 12px rgba(0, 0, 0, 0.05));
+  color: #000;
+  display: block;
+  margin-bottom: 30px;
+  padding-bottom: 35px;
+  text-decoration: none;
+
+  &:hover {
+    .product-preview {
+      img {
+        @include transform(scale(1.3));
+      }
+    }
+  }
+
+  .product-preview {
+    height: 250px;
+    overflow: hidden;
+    width: 100%;
+
+    & > img {
+      @include o-f(cover);
+      @include transit(.5s ease-in-out);
+    }
+  }
+
+  .product-title {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 32px;
+    margin: 20px 24px;
+  }
+
+  .product-info {
+    color: #8C8C8C;
+    display: flex;
+    margin: 0 24px;
+  }
+
+  .product-rating {
+    color: #FFC107;
+    margin-right: 26px;
+
+    &:before {
+      content: url("../img/star.svg");
+      margin-right: 7px;
+    }
+  }
+}
+
+.badge {
+  @include b-r(2px);
+  font-family: 'San Francisco Pro Display Regular', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 3px 10px;
+
+  &.badge-black {
+    background-color: #262626;
+    color: #fff;
   }
 }

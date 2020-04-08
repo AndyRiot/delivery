@@ -53,3 +53,23 @@
   -o-box-shadow: implode($shadow, ',');
   -webkit-box-shadow: implode($shadow, ',');
 }
+
+@mixin bg-lg($lg...) {
+  background: linear-gradient(nth($lg, 1), nth($lg, 2), nth($lg, 3));
+  background: -o-linear-gradient(nth($lg, 1), nth($lg, 2), nth($lg, 3));
+}
+
+@mixin placeholder {
+  &::placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
