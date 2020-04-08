@@ -1,15 +1,12 @@
 @import "mixins";
+@import "fonts";
+
+$primary: #1890FF;
 
 body {
   font-family: Roboto, sans-serif;
   margin: 0;
   padding: 0;
-}
-
-.container {
-  margin: 0 auto;
-  max-width: 1200px;
-  width: 100%;
 }
 
 header, footer {
@@ -20,6 +17,39 @@ header, footer {
 
   & a {
     text-decoration: none;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.btn {
+  @include b-r(2px);
+  box-sizing: border-box;
+  display: inline-flex;
+  font-family: 'San Francisco Pro Display Regular', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  margin-right: 9px;
+  padding: 8px 16px;
+
+  &.btn-default {
+    background-color: #fff;
+    border: 1px solid #D9D9D9;
+    color: #595959;
+  }
+
+  &.btn-primary {
+    background-color: $primary;
+    border: 1px solid $primary;
+    color: #fff;
+  }
+
+  & > img {
+    margin-right: 6px;
   }
 }
 
@@ -34,6 +64,57 @@ header, footer {
 
   & > img {
     margin-right: 10px;
+  }
+}
+
+.search {
+  margin: 0;
+
+  label {
+    display: block;
+    position: relative;
+
+    &:before {
+      background-position: center center;
+      background-repeat: no-repeat;
+      content: '';
+      height: 18px;
+      position: absolute;
+      left: 10px;
+      top: 11px;
+      width: 18px;
+    }
+
+    &#address-label {
+      &:before {
+        background-image: url('/assets/img/home.svg');
+      }
+    }
+
+    &#search-label {
+      &:before {
+        background-image: url('/assets/img/search.svg');
+      }
+    }
+  }
+
+  input {
+    background-color: #fff;
+    border: 1px solid #D9D9D9;
+    @include b-r(2px);
+    box-sizing: border-box;
+    line-height: 24px;
+    padding: 8px 12px 8px 32px;
+
+    &::placeholder {
+      color: #BFBFBF;
+      font-family: 'San Francisco Pro Display Regular', sans-serif;
+      font-size: 16px;
+    }
+
+    &#address-input {
+      width: 690px;
+    }
   }
 }
 
