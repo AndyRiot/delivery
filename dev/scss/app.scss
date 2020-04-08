@@ -2,6 +2,7 @@
 @import "mixins";
 @import "fonts";
 
+$yellow: #FFF1B8;
 $primary: #1890FF;
 $width-step: 8.33333%;
 
@@ -167,16 +168,49 @@ h1 {
   margin-bottom: 56px;
 
   & > .promo {
+    align-items: center;
     @include b-r(10px);
     @include b-sh(0px 7px 12px rgba(158, 158, 163, 0.1));
     height: 300px;
+    overflow: hidden;
     width: 100%;
 
     & > img {
-      height: 100%;
       @include o-f(cover);
+    }
+
+    &.full-img > img {
+      height: 100%;
       width: 100%;
     }
+
+    & > .promo-text {
+      color: #302C34;
+      font-family: Roboto, sans-serif;
+      font-style: normal;
+      padding-left: 70px;
+
+      & > .promo-title {
+        font-weight: bold;
+        font-size: 39px;
+        line-height: 46px;
+        margin-bottom: 15px;
+      }
+
+      & > .promo-about {
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 28px;
+      }
+    }
+  }
+
+  & > :not(.active-slide) {
+    display: none;
+  }
+
+  & > .active-slide {
+    display: flex;
   }
 }
 
@@ -263,4 +297,8 @@ h1 {
     background-color: #262626;
     color: #fff;
   }
+}
+
+.bg-yellow {
+  background-color: $yellow;
 }
