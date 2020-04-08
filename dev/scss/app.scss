@@ -235,6 +235,10 @@ h1 {
 }
 
 .socials {
+  display: flex;
+  justify-content: space-between;
+  min-width: 127px;
+
   a {
     @include transit(.2s ease-in-out);
 
@@ -325,4 +329,21 @@ h1 {
 
 .text-white {
   color: #fff !important;
+}
+
+.menu {
+  padding: 0 28px;
+  width: 100%;
+
+  .link {
+    color: #595959;
+    font-size: 18px;
+    line-height: 21px;
+    margin: 0 7.5px;
+    text-decoration: none;
+
+    &:hover {
+      color: #000;
+    }
+  }
 }
