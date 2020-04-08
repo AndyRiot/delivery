@@ -1,0 +1,148 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Restaurant | Food Delivery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/app.css?1">
+</head>
+<body>
+<header class="container">
+    <a href="./" class="logo-link">
+        <img src="assets/img/logo.svg" alt="Food Delivery">
+        <span>Delivery Food</span>
+    </a>
+    <form method="post" class="search">
+        <label id="address-label">
+            <input id="address-input" placeholder="Адрес доставки">
+        </label>
+    </form>
+    <div class="user">
+        <a href="#" id="login" class="btn btn-primary">
+            <img src="assets/img/user.svg" alt="">
+            <span class="btn-text">Войти</span>
+        </a>
+        <a href="#" class="btn btn-default" data-toggle="modal" data-target="cart">
+            <img src="assets/img/cart.svg" alt="">
+            <span class="btn-text">Корзина</span>
+        </a>
+    </div>
+</header>
+<main>
+    <div class="container content">
+        <div class="restaurant-header">
+            <h1>Ресторан</h1>
+            <div class="product-info">
+                <div class="product-rating">4.5</div>
+                <div>От 900 ₽&nbsp;&nbsp;•&nbsp;&nbsp;Пицца</div>
+            </div>
+        </div>
+        <div class="products row">
+
+            <div class="col-4">
+                <div class="products-card">
+                    <div class="product-preview">
+                        <img src="./assets/img/prod/roll-1.png" alt="Пицца плюс">
+                    </div>
+                    <p class="product-title">Ролл угорь стандарт</p>
+                    <p class="product-info">Рис, угорь, соус унаги, кунжут, водоросли нори.</p>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="products-card">
+                    <div class="product-preview">
+                        <img src="./assets/img/prod/roll-1.png" alt="Пицца плюс">
+                    </div>
+                    <p class="product-title">Ролл угорь стандарт</p>
+                    <p class="product-info">Рис, угорь, соус унаги, кунжут, водоросли нори.</p>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="products-card">
+                    <div class="product-preview">
+                        <img src="./assets/img/prod/roll-1.png" alt="Пицца плюс">
+                    </div>
+                    <p class="product-title">Ролл угорь стандарт</p>
+                    <p class="product-info">Рис, угорь, соус унаги, кунжут, водоросли нори.</p>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="products-card">
+                    <div class="product-preview">
+                        <img src="./assets/img/prod/roll-1.png" alt="Пицца плюс">
+                    </div>
+                    <p class="product-title">Ролл угорь стандарт</p>
+                    <p class="product-info">Рис, угорь, соус унаги, кунжут, водоросли нори.</p>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="products-card">
+                    <div class="product-preview">
+                        <img src="./assets/img/prod/roll-1.png" alt="Пицца плюс">
+                    </div>
+                    <p class="product-title">Ролл угорь стандарт</p>
+                    <p class="product-info">Рис, угорь, соус унаги, кунжут, водоросли нори.</p>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="products-card">
+                    <div class="product-preview">
+                        <img src="./assets/img/prod/roll-1.png" alt="Пицца плюс">
+                    </div>
+                    <p class="product-title">Ролл угорь стандарт</p>
+                    <p class="product-info">Рис, угорь, соус унаги, кунжут, водоросли нори.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+<footer class="container">
+    <a href="./" class="logo-link">
+        <img src="assets/img/logo.svg" alt="Food Delivery">
+        <span>Delivery Food</span>
+    </a>
+    <nav class="menu">
+        <span><a href="#" class="link">Ресторанам</a></span>
+        <span><a href="#" class="link">Курьерам</a></span>
+        <span><a href="#" class="link">Пресс-центр</a></span>
+        <span><a href="#" class="link">Контакты</a></span>
+    </nav>
+    <div class="socials">
+        <a href="#" target="_blank" title="Instagram">
+            <img src="assets/img/insta.svg" alt="Instagram">
+        </a>
+        <a href="#" target="_blank" title="Facebook">
+            <img src="assets/img/fb.svg" alt="Facebook">
+        </a>
+        <a href="#" target="_blank" title="VK">
+            <img src="assets/img/vk.svg" alt="VK">
+        </a>
+    </div>
+</footer>
+<div id="modals-wrapper">
+    <div id="cart" class="modal">
+        <div class="modal-header">
+            <div>Корзина</div>
+            <div data-dismiss="modal">&times;</div>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+            <div class="cart-total">
+                <div class="badge badge-lg badge-black">1250 ₽</div>
+            </div>
+            <div class="cart-buttons">
+                <div class="btn btn-primary">Оформить заказ</div>
+                <div class="btn btn-default" data-dismiss="modal">Отмена</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="assets/js/app.js?v1"></script>
+</body>
+</html>

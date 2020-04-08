@@ -248,6 +248,7 @@ h1 {
 }
 
 .socials {
+  align-items: center;
   display: flex;
   justify-content: space-between;
   min-width: 127px;
@@ -303,21 +304,21 @@ h1 {
     line-height: 32px;
     margin: 20px 24px;
   }
+}
 
-  .product-info {
-    color: #8C8C8C;
-    display: flex;
-    margin: 0 24px;
-  }
+.product-info {
+  color: #8C8C8C;
+  display: flex;
+  margin: 0 24px;
+}
 
-  .product-rating {
-    color: #FFC107;
-    margin-right: 26px;
+.product-rating {
+  color: #FFC107;
+  margin-right: 26px;
 
-    &:before {
-      content: url("../img/star.svg");
-      margin-right: 7px;
-    }
+  &:before {
+    content: url("../img/star.svg");
+    margin-right: 7px;
   }
 }
 
@@ -421,5 +422,20 @@ h1 {
       display: flex;
       justify-content: space-between;
     }
+  }
+}
+
+.restaurant-header {
+  align-items: center;
+  display: flex;
+  margin-bottom: 44px;
+
+  & > * {
+    margin: 0;
+    padding: 0;
+  }
+
+  & > h1 {
+    margin-right: 30px;
   }
 }
