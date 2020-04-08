@@ -22,7 +22,7 @@
             <img src="assets/img/user.svg" alt="">
             <span class="btn-text">Войти</span>
         </a>
-        <a href="#" id="cart" class="btn btn-default">
+        <a href="#" class="btn btn-default" data-toggle="modal" data-target="cart">
             <img src="assets/img/cart.svg" alt="">
             <span class="btn-text">Корзина</span>
         </a>
@@ -170,6 +170,24 @@
         </a>
     </div>
 </footer>
+<div id="modals-wrapper">
+    <div id="cart" class="modal">
+        <div class="modal-header">
+            <div>Корзина</div>
+            <div data-dismiss="modal">&times;</div>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+            <div class="cart-total">
+                <div class="badge badge-lg badge-black">1250 ₽</div>
+            </div>
+            <div class="cart-buttons">
+                <div class="btn btn-primary">Оформить заказ</div>
+                <div class="btn btn-default" data-dismiss="modal">Отмена</div>
+            </div>
+        </div>
+    </div>
+</div>
 <script src="assets/js/app.js?v1"></script>
 </body>
 </html>

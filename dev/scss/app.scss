@@ -38,6 +38,10 @@ h1 {
   line-height: 42px;
 }
 
+[data-toggle], [data-dismiss], .btn {
+  cursor: pointer;
+}
+
 .container {
   margin: 0 auto;
   max-width: 1200px;
@@ -75,17 +79,26 @@ h1 {
   line-height: 24px;
   margin-right: 9px;
   padding: 8px 16px;
+  @include transit(.2s ease-in-out);
 
   &.btn-default {
     background-color: #fff;
     border: 1px solid #D9D9D9;
     color: #595959;
+
+    &:hover {
+      background-color: darken(#fff, 15%);
+    }
   }
 
   &.btn-primary {
     background-color: $primary;
     border: 1px solid $primary;
     color: #fff;
+
+    &:hover {
+      background-color: darken($primary, 15%);
+    }
   }
 
   & > img {
@@ -309,13 +322,25 @@ h1 {
 }
 
 .badge {
+  align-items: center;
   @include b-r(2px);
+  display: flex;
   font-family: 'San Francisco Pro Display Regular', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
   line-height: 20px;
   padding: 3px 10px;
+
+  &.badge-lg {
+    @include b-r(5px);
+    color: #fafafa;
+    height: 54px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    padding: 0 20px;
+  }
 
   &.badge-black {
     background-color: #262626;
@@ -344,6 +369,57 @@ h1 {
 
     &:hover {
       color: #000;
+    }
+  }
+}
+
+#modals-wrapper {
+  align-items: center;
+  background-color: rgba(0, 0, 0, .3);
+  bottom: 0;
+  display: none;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 4;
+
+  &.in {
+    display: flex;
+  }
+
+  .modal {
+    background-color: #fff;
+    display: none;
+    padding: 40px 45px;
+    width: 780px;
+    z-index: 5;
+
+    &.in {
+      display: block;
+    }
+
+    & > .modal-header {
+      color: #000;
+      display: flex;
+      font-family: Roboto, sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 36px;
+      justify-content: space-between;
+      line-height: 42px;
+    }
+
+    & > .modal-body {
+      display: flex;
+      margin: 45px 0 53px 0;
+    }
+
+    & > .modal-footer {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
     }
   }
 }
