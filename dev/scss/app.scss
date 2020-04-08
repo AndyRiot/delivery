@@ -4,6 +4,10 @@
 
 $primary: #1890FF;
 
+* {
+  outline: none !important;
+}
+
 body {
   font-family: Roboto, sans-serif;
   margin: 0;
@@ -55,6 +59,7 @@ header, footer {
 }
 
 .logo-link {
+  color: #000;
   display: flex;
   font-size: 15px;
   font-style: normal;
@@ -62,6 +67,11 @@ header, footer {
   line-height: 18px;
   text-decoration: none;
   width: 100px;
+
+  &:hover {
+    color: lighten(#000, 50%);
+    @include transit(.2s ease-in-out);
+  }
 
   & > img {
     margin-right: 10px;
