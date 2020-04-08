@@ -88,13 +88,13 @@ header, footer {
 
     &#address-label {
       &:before {
-        background-image: url('/assets/img/home.svg');
+        background-image: url('../img/home.svg');
       }
     }
 
     &#search-label {
       &:before {
-        background-image: url('/assets/img/search.svg');
+        background-image: url('../img/search.svg');
       }
     }
   }
