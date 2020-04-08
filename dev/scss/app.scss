@@ -171,23 +171,41 @@ h1 {
     align-items: center;
     @include b-r(10px);
     @include b-sh(0px 7px 12px rgba(158, 158, 163, 0.1));
+    display: flex;
     height: 300px;
+    justify-content: space-between;
     overflow: hidden;
+    position: relative;
+    @include transit(1s ease-in-out);
     width: 100%;
 
     & > img {
       @include o-f(cover);
     }
 
-    &.full-img > img {
-      height: 100%;
-      width: 100%;
+    &.full-img {
+      & > img {
+        height: 100%;
+        width: 100%;
+      }
+
+      & > .promo-text {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+      }
     }
 
     & > .promo-text {
       color: #302C34;
+      display: flex;
+      flex-flow: column;
       font-family: Roboto, sans-serif;
       font-style: normal;
+      justify-content: center;
+      max-width: 45%;
       padding-left: 70px;
 
       & > .promo-title {
@@ -206,11 +224,13 @@ h1 {
   }
 
   & > :not(.active-slide) {
-    display: none;
+    height: 0;
+    opacity: 0;
   }
 
   & > .active-slide {
-    display: flex;
+    height: 300px;
+    opacity: 1;
   }
 }
 
@@ -301,4 +321,8 @@ h1 {
 
 .bg-yellow {
   background-color: $yellow;
+}
+
+.text-white {
+  color: #fff !important;
 }
